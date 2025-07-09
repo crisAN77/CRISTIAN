@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Promociones de Pizza</title>
+  <script>
+    function seleccionarPromocion(num) {
+      document.getElementById('seleccion').style.display = 'block';
+      document.getElementById('titulo').textContent = "Promoción seleccionada: " + num;
+      document.getElementById('promoInput').value = "Promoción " + num;
+    }
+  </script>
+</head>
+<body>
+  <h1>Elige tu promoción de pizza</h1>
+
+  <ul>
+    <li><a href="#" onclick="seleccionarPromocion(1)">Promoción 1: 1 pizza + 1 gaseosa = $15.000</a></li>
+    <li><a href="#" onclick="seleccionarPromocion(2)">Promoción 2: 2 pizzas + 1 gaseosa = $25.000</a></li>
+    <li><a href="#" onclick="seleccionarPromocion(3)">Promoción 3: 4 pizzas + 2 gaseosas = $45.000</a></li>
+  </ul>
+
+  <div id="seleccion" style="display:none; margin-top:20px;">
+    <h2 id="titulo"></h2>
+    <form action="mailto:sucorreo@algo.com" method="post" enctype="text/plain">
+      <input type="hidden" name="Promoción" id="promoInput" value="">
+
+      <label for="correo">Correo electrónico:</label><br>
+      <input type="email" id="correo" name="Correo" required><br><br>
+
+      <label for="direccion">Dirección de entrega:</label><br>
+      <input type="text" id="direccion" name="Dirección" required><br><br>
+
+      <label for="telefono">Teléfono de contacto:</label><br>
+      <input type="tel" id="telefono" name="Teléfono" required><br><br>
+
+      <input type="submit" value="Enviar pedido">
+    </form>
+  </div>
+</body>
+</html>
